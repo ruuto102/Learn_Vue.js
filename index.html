@@ -13,6 +13,12 @@
   <p>{{name}}</p>
   <p>{{myData}}</p>
   <button @click="message = 'ボタンから変更'">変更</button>
+
+  <hello></hello>
+  <hello></hello>
+  <hello></hello>
+  
+  <hello></hello>
 </div>
 
 <div id = "app2"></div>
@@ -24,6 +30,11 @@ var data = {
   message: 'チワ',
   name: 'なな'
 }
+
+Vue.component('hello',{
+  template: '<p>こんにちは</p>'
+});
+
 var vm = new Vue({
     el: '#app1',
     data: data,
@@ -46,6 +57,9 @@ new Vue({
     return createElement('h1', 'こんにちは');
   },
 }).$mount('#app3')
+
+var dir = document.captureElement('div');
+console.log(dir);
 
 </script>
  </body>
